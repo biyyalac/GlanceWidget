@@ -59,7 +59,7 @@ class FirstGlance: GlanceAppWidget() {
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
-            MyContent()
+            My()
         }
     }
 
@@ -67,7 +67,7 @@ class FirstGlance: GlanceAppWidget() {
     @OptIn(ExperimentalGlancePreviewApi::class)
     @Preview
     @Composable
-    private fun MyContent() {
+    private fun My() {
         Column(
             modifier = GlanceModifier.fillMaxSize().padding(10.dp)
                 .background(GlanceTheme.colors.background),
@@ -81,40 +81,13 @@ class FirstGlance: GlanceAppWidget() {
                     text = "Compose ",
                     onClick = actionStartActivity<Compose2FromGlance>()
                 )
-                Button(
-                    text = "Work 2",
-                    onClick = actionStartActivity<MainActivity>()
-                )
+
             }
         }
     }
 
 
 
-    @OptIn(ExperimentalGlancePreviewApi::class)
-    @Preview
-    @Composable
-    private fun MyContent2() {
-        Column(
-            modifier = GlanceModifier.fillMaxSize().padding(10.dp)
-                .background(GlanceTheme.colors.background),
-            verticalAlignment = Alignment.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-
-            Text(text = "Where to? 2", modifier = GlanceModifier.padding(12.dp))
-            Row(horizontalAlignment = Alignment.CenterHorizontally) {
-                Button(
-                    text = "Compose ",
-                    onClick = actionStartActivity<Compose2FromGlance>()
-                )
-                Button(
-                    text = "Work",
-                    onClick = actionStartActivity<MainActivity>()
-                )
-            }
-        }
-    }
 
 }
 
@@ -129,8 +102,12 @@ private fun MyContent() {
 
     ) {
 
-        for (i in 0..100)
-        androidx.compose.material3.Text("Text", style = TextStyle(color = Color.Black))
+      //  Column {
+            for (i in 0..100)
+                androidx.compose.material3.Text("Text 124", style = TextStyle(color = Color.Black))
+
+      //  }
+
 
     }
 }
